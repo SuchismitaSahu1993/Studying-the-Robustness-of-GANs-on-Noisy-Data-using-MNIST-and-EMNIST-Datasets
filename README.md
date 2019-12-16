@@ -30,13 +30,15 @@ The paper "Robustness of conditional GANs to noisy labels"[1] studies the proble
 
 ## 4. Experiements
 ## 4.1. Data
-The dataset used here is the MNIST handwritten digits recognition dataset which has about 60,000 images in training and . The dataset can be found at 
+The dataset used here is the MNIST handwritten digits recognition dataset which has about 60,000 images in training and . The dataset can be found at
+
 
 ## 4.2. Dataset Created for Experiments
 
 ## 4.3. Experiement
 ### 4.3.1 Baseline 
 Implemented a basic GAN using Keras framework to understand the behavior and baseline output.
+![GAN](GAN_working.png)
 
 
 ## 5. Results and Discussion
