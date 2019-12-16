@@ -30,18 +30,21 @@ The paper "Robustness of conditional GANs to noisy labels"[1] studies the proble
 
 ## 4. Experiements
 ## 4.1. Data
-The dataset used here is the MNIST handwritten digits recognition dataset which has about 60,000 images in training and . The dataset can be found at
+The dataset used here is the MNIST handwritten digits recognition dataset which has about 60,000 images in training and . The dataset can be found at http://yann.lecun.com/exdb/mnist/. The EMNIST dataset can be found at: http://www.itl.nist.gov/iaui/vip/cs_links/EMNIST/gzip.zip. There are 6 classes in the EMNIST dataset out of which the 'bymerge' dataset is use din this work.
 
 
 ## 4.2. Dataset Created for Experiments
 
 ## 4.3. Experiement
 ### 4.3.1 Baseline 
-Implemented a basic GAN using Keras framework to understand the behavior and baseline output.
+Implemented a basic GAN using Keras and Pytorch frameworks to understand the behavior and baseline output.
 ![GAN](GAN_working.png)
 
 
 ## 5. Results and Discussion
+Standard Generative adversarial networks are sensitive to noise in the training data. 
+
+Future work on developing new architectures to make the GANs robust to noise have been done in [1] and [4].
 
 ## 6. Reproducing Results
 ## 6.1. Usage
@@ -54,3 +57,4 @@ To run the ipython notebook, upload the notebook on Google Colab. The code downl
 3. Ashish Bora, Eric Price, and Alexandros G Dimakis. AmbientGAN: Generative models from lossy measurements. In International Conference on Learning Representations (ICLR), 2018.
 4. Zhi Xu, Chengtao Li, and Stefanie Jegelka. Robust GANs against dishonest adversaries. arXiv preprint arXiv:1802.09700, 2018.
 5. Generative Adversarial Networks; https://arxiv.org/pdf/1406.2661.pdf
+6. Yann LeCun. The mnist database of handwritten digits. http://yann.lecun.com/exdb/mnist/ 1998.
