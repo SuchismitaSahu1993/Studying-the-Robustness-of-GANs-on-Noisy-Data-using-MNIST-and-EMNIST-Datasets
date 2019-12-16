@@ -22,21 +22,22 @@ Generative Adversarial Networks are a class of generative models that can genera
 ![Objective_Function](https://miro.medium.com/max/2344/1*FbQLpEVQKsMSK-c7_5KcWw.png)
 Where, D and G are the discriminator and generator respectively optimized over function classes of our choise and N is the distribution of the latent random noise vector.
 
-### Types of GANs:
-## 2. Architecture Implemented
+## 2. Literature Review/ Related Work
+The paper "Robustness of conditional GANs to noisy labels"[1] studies the problem of learning conditional generators from noisy labeled data that has labels corrupted by random noise. The paper considers two scenarios i.e. whether the noise model is known or not and proposes novel architectures with a projection discriminator that are experimentally proved to be robust to noisy labeled data. Robustness of GANs against adversarial or random noise has also recently been studied in "AmbientGAN: Generative models from lossy measurements" [3] and "Robust GANs against dishonest adversaries" [4]. The AmbientGAN proposed in [3] addresses corruption on the image data itself rather than on labels. Having given corrupted samples with known corruption, AmbientGAN applies corruption to the output of generator before feeding it to the discriminator. This work is motivated by the similar work in AmbientGAN. [3]
 
-## 3. Literature Review/ Related Work
+## 3. Architecture Implemented
 
 
 ## 4. Experiements
 ## 4.1. Data
 The dataset used here is the MNIST handwritten digits recognition dataset which has about 60,000 images in training and . The dataset can be found at 
 
-## 4.2. Code and Baselione
-
 ## 4.2. Dataset Created for Experiments
 
-## 4.3. Experiement Done
+## 4.3. Experiement
+### 4.3.1 Baseline 
+Implemented a basic GAN using Keras framework to understand the behavior and baseline output.
+
 
 ## 5. Results and Discussion
 
@@ -46,6 +47,8 @@ To run the ipython notebook, upload the notebook on Google Colab. The code downl
 
 
 ## 6. References
-1. https://papers.nips.cc/paper/8229-robustness-of-conditional-gans-to-noisy-labels.pdf 
+1. https://papers.nips.cc/paper/8229-robustness-of-conditional-gans-to-noisy-labels.pdf ; https://github.com/POLane16/Robust-Conditional-GAN
 2. https://towardsdatascience.com/understanding-generative-adversarial-networks-gans-cd6e4651a29
-3. 
+3. Ashish Bora, Eric Price, and Alexandros G Dimakis. AmbientGAN: Generative models from lossy measurements. In International Conference on Learning Representations (ICLR), 2018.
+4. Zhi Xu, Chengtao Li, and Stefanie Jegelka. Robust GANs against dishonest adversaries. arXiv preprint arXiv:1802.09700, 2018.
+5. Generative Adversarial Networks; https://arxiv.org/pdf/1406.2661.pdf
