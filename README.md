@@ -14,11 +14,14 @@ University of Southern California<br>
 ajoshi@usc.edu
 
 ## 1. Introduction
-Here we study the problem of learning generators from noisy data on MNIST handwritten digit dataset. The dataset is corrupted for experiments in two scenarios; Corruption by Gaussian noise and corruption by EMNIST dataset. We show experimentally that Generative Adversarial Networks are robust to noise in the data upto a certain threshold and various artifacts are introduced in the output generated images on increasing the noise above the threshold.   
+Here we study the problem of learning generators from noisy data on MNIST handwritten digit dataset that gives insights about the robustness of Generative Adversarial Networks towards Noisy Data. The dataset is corrupted for experiments in two scenarios; Corruption by Gaussian noise and corruption by EMNIST dataset. We show experimentally that Generative Adversarial Networks are robust to noise in the data upto a certain threshold and various artifacts are introduced in the output generated images on increasing the noise above the threshold.
+![MNIST_GAN](https://miro.medium.com/max/1416/1*6zMZBE6xtgGUVqkaLTBaJQ.png)
 
 ## 1.1. Generative Adversarial Network
-Generative Adversarial Networks are a class of generative models that can generate new content. GANs have been really successful in many current applications including generating synthetic datases for research, neural style transfer, image de-noising etc. GANs aim to learn the underlying distribution of the training data. The Generator and Discriminator are trained in such a way that the generator leans to create data such that the discriminator isn't able to distinguish it as fake anymore.
-![MNIST_GAN](https://miro.medium.com/max/1416/1*6zMZBE6xtgGUVqkaLTBaJQ.png)
+Generative Adversarial Networks are a class of generative models that can generate new content. GANs have been really successful in many current applications including generating synthetic datases for research, neural style transfer, image de-noising etc. GANs aim to learn the underlying distribution of the training data. The Generator and Discriminator are trained in such a way that the generator leans to create data such that the discriminator isn't able to distinguish it as fake anymore. The optimization function that a GAN solves is:
+![Objective_Function](https://miro.medium.com/max/2344/1*FbQLpEVQKsMSK-c7_5KcWw.png)
+Where, D and G are the discriminator and generator respectively optimized over function classes of our choise and N is the distribution of the latent random noise vector.
+
 ### Types of GANs:
 ## 2. Architecture Implemented
 
