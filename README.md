@@ -30,8 +30,7 @@ The paper "Robustness of conditional GANs to noisy labels"[1] studies the proble
 
 ## 4. Experiements
 ## 4.1. Data
-The dataset used here is the MNIST handwritten digits recognition dataset which has about 60,000 images in training and . The dataset can be found at http://yann.lecun.com/exdb/mnist/. The EMNIST dataset can be found at: http://www.itl.nist.gov/iaui/vip/cs_links/EMNIST/gzip.zip. There are 6 classes in the EMNIST dataset out of which the 'bymerge' dataset is use din this work.
-
+The dataset used here is the MNIST handwritten digits recognition dataset which has about 60,000 images in training and . The dataset can be found at http://yann.lecun.com/exdb/mnist/. [6] The EMNIST dataset can be found at: http://www.itl.nist.gov/iaui/vip/cs_links/EMNIST/gzip.zip. There are 6 classes in the EMNIST dataset out of which the 'bymerge' dataset is used in this work.
 
 ## 4.2. Dataset Created for Experiments
 
@@ -40,6 +39,11 @@ The dataset used here is the MNIST handwritten digits recognition dataset which 
 Implemented a basic GAN using Keras and Pytorch frameworks to understand the behavior and baseline output.
 ![GAN](GAN_working.png)
 
+### 4.3.2 Gaussian Noise
+Trained the GAN and observed the outputs obtained using different percentages of Gaussian Noise.
+
+### 4.3.3 EMNIST Data
+Trained the GAN and observed the outputs obtained using different percentages of Combination of MNIST and EMNIST dataset using the defined function create_dataset.
 
 ## 5. Results and Discussion
 Standard Generative adversarial networks are sensitive to noise in the training data. 
@@ -58,3 +62,4 @@ To run the ipython notebook, upload the notebook on Google Colab. The code downl
 4. Zhi Xu, Chengtao Li, and Stefanie Jegelka. Robust GANs against dishonest adversaries. arXiv preprint arXiv:1802.09700, 2018.
 5. Generative Adversarial Networks; https://arxiv.org/pdf/1406.2661.pdf
 6. Yann LeCun. The mnist database of handwritten digits. http://yann.lecun.com/exdb/mnist/ 1998.
+7. Nagarajan Natarajan, Inderjit S Dhillon, Pradeep K Ravikumar, and Ambuj Tewari. Learning with noisy labels. In Advances in neural information processing systems, pages 1196–1204, 2013
