@@ -26,7 +26,7 @@ Where, D and G are the discriminator and generator respectively optimized over f
 The paper "Robustness of conditional GANs to noisy labels"[1] studies the problem of learning conditional generators from noisy labeled data that has labels corrupted by random noise. The paper considers two scenarios i.e. whether the noise model is known or not and proposes novel architectures with a projection discriminator that are experimentally proved to be robust to noisy labeled data. Robustness of GANs against adversarial or random noise has also recently been studied in "AmbientGAN: Generative models from lossy measurements" [3] and "Robust GANs against dishonest adversaries" [4]. The AmbientGAN proposed in [3] addresses corruption on the image data itself rather than on labels. Having given corrupted samples with known corruption, AmbientGAN applies corruption to the output of generator before feeding it to the discriminator. This work is motivated by the similar work in AmbientGAN. [3]
 
 ## 3. Architecture Implemented
-
+Plotting Model summary
 
 ## 4. Experiements
 ## 4.1. Data
@@ -56,16 +56,17 @@ Minute errors are seen on training the GAN for about 400 Epochs with 30% data as
 
 ### 5.2 EMNIST Dataset
 In this work, the GAN is trained on a combination of MNIST and EMNIST Images. Starting with a combination of 68000:2000::MNIST:EMNIST images, artifacts like distorted images, extra dots in the image etc. are observed in the Images. The effects are more visible during the early epochs of training and gradually seem to diminish comparatively. The studies show that the addition of EMNIST data while training does affect the performance of the GAN substantially.
-
+Epoch 17
 ![MNIST_Epoch17](epoch17_batch5.jpg)
+Epoch 60
 ![MNIST_Epoch60](epoch60_batch2.jpg)
+Epoch 362
 ![MNIST_Epoch362](epoch362_error.png)
 
 Future work on developing new architectures to make the GANs robust to noise have been done in [1] and [4].
 
 ## 6. Reproducing Results
 To run the ipython notebook, upload the notebook on Google Colab. The code downloads both MNIST and EMNIST datasets from online. Change the Input to the Create_Dataset Function to reproduce the result with varying Noise percentages to the GAN for MNIST-EMNIST combinations.
-
 
 ## 7. References
 1. https://papers.nips.cc/paper/8229-robustness-of-conditional-gans-to-noisy-labels.pdf ; https://github.com/POLane16/Robust-Conditional-GAN
