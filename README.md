@@ -52,8 +52,11 @@ In this work, on training the GAN with added Gaussian noise, rather than disting
 **Summarizing:** 
 No Substantial Effects Seen for 5%, 10% and 20% added Noisy Data. Minute errors are seen on training the GAN for about 300 Epochs with 30% images as Noisy images.
 **Output of GAN on 300 Epoch without Addition of Gaussian Noise**
+
 ![Gaussian_Result](gan_generated_image_300.png "Output of GAN on 300 Epoch without Addition of Noise")
+
 **Output of GAN on 300 Epoch on Addition of Gaussian Noise**
+
 ![Gaussian_Result2](gan_generated_image_noisy_300.png "Output of GAN on 300 Epoch on Addition of Noise")
 
 ### 5.2 EMNIST Dataset
