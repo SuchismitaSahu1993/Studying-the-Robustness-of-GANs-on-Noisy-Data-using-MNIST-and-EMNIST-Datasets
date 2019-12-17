@@ -50,7 +50,7 @@ Standard Generative adversarial networks are somewhat sensitive to noise in the 
 ### 5.1 Gaussian Noise
 In this work, on training the GAN with added Gaussian noise, rather than distinguishing a real image from a generated image as in a traditional GAN, the discriminator here distinguishes between a real image from a simulated noisy image. This introduces artifacts in the output generated images of the GAN. But the inherent robustness of the GAN to small amount of distorted data doesn't show detectable artifacts in the results as compared to the original GAN results.
 **Summarizing:** 
-No Substantial Effects Seen for 5%, 10% and 20% added Noisy Data. Minute errors are seen on training the GAN for about 300 Epochs with 30% images as Noisy images.
+No Substantial Effects Seen for 5%, 10% and 20% added Noisy Data. Minute errors are seen on training the GAN for about 300 Epochs with 30% images as Noisy images.<br>
 **Output of GAN on 300 Epoch without Addition of Gaussian Noise**
 
 ![Gaussian_Result](gan_generated_image_300.png "Output of GAN on 300 Epoch without Addition of Noise")
