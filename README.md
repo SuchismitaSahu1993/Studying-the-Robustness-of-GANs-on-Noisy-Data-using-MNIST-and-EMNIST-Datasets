@@ -30,7 +30,9 @@ The paper "Robustness of conditional GANs to noisy labels"[1] studies the proble
 
 ## 4. Experiements
 ## 4.1. Data
-The dataset used here is the MNIST handwritten digits recognition dataset which has about 60,000 images in training and . The dataset can be found at http://yann.lecun.com/exdb/mnist/. [6] The EMNIST dataset can be found at: http://www.itl.nist.gov/iaui/vip/cs_links/EMNIST/gzip.zip. [8] There are 6 classes in the EMNIST dataset out of which the 'bymerge' dataset is used in this work. The dataset structure of the EMNIST dataset directly matches that of MNIST dataset.
+The dataset used here is the MNIST handwritten digits recognition dataset which has about 60,000 images in training and . The dataset can be found at http://yann.lecun.com/exdb/mnist/. [6] The EMNIST dataset can be found at: http://www.itl.nist.gov/iaui/vip/cs_links/EMNIST/gzip.zip. [8] There are 6 classes in the EMNIST dataset out of which the 'bymerge' dataset is used in this work. 
+EMNIST ByMerge: 814,255 characters. 47 unbalanced classes.
+The dataset structure of the EMNIST dataset directly matches that of MNIST dataset.
 
 ## 4.3. Experiement
 ### 4.3.1 Baseline 
@@ -52,10 +54,7 @@ Summarizing:
 Minute errors are seen on training the GAN for about 400 Epochs with 30% data as Noisy Data.
 
 ### 5.2 EMNIST Dataset
-In this work, the GAN is trained on a combination of MNIST and EMNIST Images
-
-
-
+In this work, the GAN is trained on a combination of MNIST and EMNIST Images. Starting with a combination of 68000:2000::MNIST:EMNIST images, artifacts like distorted images, extra dots in the image etc. are observed in the Images. The effects are more visible during the early epochs of training and gradually seem to diminish comparatively. The studies show that the addition of EMNIST data while training does affect the performance of the GAN substantially.
 
 ![GAN](GAN)
 
@@ -73,4 +72,4 @@ To run the ipython notebook, upload the notebook on Google Colab. The code downl
 5. Generative Adversarial Networks; https://arxiv.org/pdf/1406.2661.pdf
 6. Yann LeCun. The mnist database of handwritten digits. http://yann.lecun.com/exdb/mnist/ 1998.
 7. Nagarajan Natarajan, Inderjit S Dhillon, Pradeep K Ravikumar, and Ambuj Tewari. Learning with noisy labels. In Advances in neural information processing systems, pages 1196–1204, 2013
-8. EMNIST Dataset; https://www.nist.gov/itl/products-and-services/emnist-dataset
+8. Cohen, G., Afshar, S., Tapson, J., & van Schaik, A. (2017). EMNIST: an extension of MNIST to handwritten letters. Retrieved from http://arxiv.org/abs/1702.05373
