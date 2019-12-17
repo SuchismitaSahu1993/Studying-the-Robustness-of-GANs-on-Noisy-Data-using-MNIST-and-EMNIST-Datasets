@@ -108,8 +108,8 @@ Future work on developing new architectures to make the GANs robust to noise hav
 
 ## 6. Reproducing Results
 To run the ipython notebook, upload the notebook on Google Colab. The code downloads both MNIST and EMNIST datasets from online. Change the Input to the Create_Dataset Function to reproduce the result with varying Noise percentages to the GAN for MNIST-EMNIST combinations.
-The Gaussian Noise added GAN can be run using 'GAN_Gaussian.py'
-**Dependencies**
+The Gaussian Noise added GAN can be run using 'GAN_Gaussian.py'. <br>
+**Dependencies** <br>
 Keras, Pytorch, Numpy, Scikit-learn, tensorboardX
 
 ## 7. References
