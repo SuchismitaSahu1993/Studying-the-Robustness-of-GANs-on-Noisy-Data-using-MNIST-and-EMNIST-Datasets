@@ -30,7 +30,7 @@ The paper "Robustness of conditional GANs to noisy labels"[1] studies the proble
 
 ## 4. Experiements
 ## 4.1. Data
-The dataset used here is the MNIST handwritten digits recognition dataset which has about 60,000 images in training and . The dataset can be found at http://yann.lecun.com/exdb/mnist/. [6] The EMNIST dataset can be found at: http://www.itl.nist.gov/iaui/vip/cs_links/EMNIST/gzip.zip. [8] There are 6 classes in the EMNIST dataset out of which the 'bymerge' dataset is used in this work. 
+The dataset used here is the MNIST handwritten digits recognition dataset which has about 60,000 images in training and . The dataset can be found at http://yann.lecun.com/exdb/mnist/. [6] The EMNIST dataset can be found at: http://www.itl.nist.gov/iaui/vip/cs_links/EMNIST/gzip.zip. [8] There are 6 classes in the EMNIST dataset out of which the 'bymerge' dataset split is used in this work. 
 EMNIST ByMerge: 814,255 characters. 47 unbalanced classes.
 The dataset structure of the EMNIST dataset directly matches that of MNIST dataset.
 
@@ -57,7 +57,9 @@ Minute errors are seen on training the GAN for about 400 Epochs with 30% data as
 ### 5.2 EMNIST Dataset
 In this work, the GAN is trained on a combination of MNIST and EMNIST Images. Starting with a combination of 68000:2000::MNIST:EMNIST images, artifacts like distorted images, extra dots in the image etc. are observed in the Images. The effects are more visible during the early epochs of training and gradually seem to diminish comparatively. The studies show that the addition of EMNIST data while training does affect the performance of the GAN substantially.
 
-![GAN](GAN)
+![MNIST_Epoch17](epoch17_batch5.jpg)
+![MNIST_Epoch60](epoch60_batch2.jpg)
+![MNIST_Epoch362](epoch362_error.png)
 
 Future work on developing new architectures to make the GANs robust to noise have been done in [1] and [4].
 
