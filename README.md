@@ -50,22 +50,56 @@ Standard Generative adversarial networks are somewhat sensitive to noise in the 
 ### 5.1 Gaussian Noise
 In this work, on training the GAN with added Gaussian noise, rather than distinguishing a real image from a generated image as in a traditional GAN, the discriminator here distinguishes between a real image from a simulated noisy image. This introduces artifacts in the output generated images of the GAN. But the inherent robustness of the GAN to small amount of distorted data doesn't show detectable artifacts in the results as compared to the original GAN results.
 **Summarizing:** 
-#### No Substantial Effects Seen for 5%, 10% and 20% added Noisy Data
-Minute errors are seen on training the GAN for about 300 Epochs with 30% images as Noisy images.
-
-![Gaussian_Result](gan_generated_image_300.png "Output of GAN on 300 Epoch without Addition of Noise")*Without Noisy Data*
-![Gaussian_Result2](gan_generated_image_noisy_300.png "Output of GAN on 300 Epoch on Addition of Noise")*With Noisy Data*
-
+No Substantial Effects Seen for 5%, 10% and 20% added Noisy Data. Minute errors are seen on training the GAN for about 300 Epochs with 30% images as Noisy images.
+**Output of GAN on 300 Epoch without Addition of Gaussian Noise**
+![Gaussian_Result](gan_generated_image_300.png "Output of GAN on 300 Epoch without Addition of Noise")
+**Output of GAN on 300 Epoch on Addition of Gaussian Noise**
+![Gaussian_Result2](gan_generated_image_noisy_300.png "Output of GAN on 300 Epoch on Addition of Noise")
 
 ### 5.2 EMNIST Dataset
 In this work, the GAN is trained on a combination of MNIST and EMNIST Images. Starting with a combination of 68000:2000::MNIST:EMNIST images, artifacts like distorted images, extra dots in the image etc. are observed in the Images. The effects are more visible during the early epochs of training and gradually seem to diminish comparatively. The studies show that the addition of EMNIST data while training does affect the performance of the GAN substantially.
+**Epoch 10**
+![MNIST_Epoch10](epoch10.png)
 **Epoch 17**
 ![MNIST_Epoch17](epoch17_batch5.jpg)
+**Epoch 20**
+![MNIST_Epoch20](epoch20.jpg)
+**Epoch 32**
+![MNIST_Epoch32](epoch32.jpg)
+**Epoch 44**
+![MNIST_Epoch44](epoch44_btch2.jpg)
 **Epoch 60**
 ![MNIST_Epoch60](epoch60_batch2.jpg)
+**Epoch 70**
+![MNIST_Epoch70](epoch70.jpg)
+**Epoch 100**
+![MNIST_Epoch100](epoch100.jpg)
+**Epoch 150**
+![MNIST_Epoch150](epoch150.png)
+**Epoch 200**
+![MNIST_Epoch200](epoch200.png)
+**Epoch 250**
+![MNIST_Epoch250](epoch250.png)
+**Epoch 274**
+![MNIST_Epoch274](epoch274.png)
+**Epoch 445**
+![MNIST_Epoch445](epoch445.png)
+**Epoch 300**
+![MNIST_Epoch300](epoch300.png)
+**Epoch 350**
+![MNIST_Epoch350](epoch350.png)
 **Epoch 362**
 ![MNIST_Epoch362](epoch362_error.png)
+**Epoch 402**
+![MNIST_Epoch402](epoch402.png)
+**Epoch 445**
+![MNIST_Epoch445](epoch445.png)
+**Epoch 465**
+![MNIST_Epoch465](epoch465.png)
+**Epoch 500**
+![MNIST_Epoch500](epoch500.png)
 
+As can be seen from the selected results, there are a lot of artifacts introduced in the GAN generated Images after adding EMNIST data as noise with the MNIST data. The artifacts are mostly seen as extra dots around the digits, blurred digit images, boxy dots around the digits etc. The artifacts are visually distinguishable for **~14% Added Noisy data.** (60000 mnist + 10000 emnist)
 Future work on developing new architectures to make the GANs robust to noise have been done in [1] and [4].
 
 ## 6. Reproducing Results
