@@ -28,41 +28,42 @@ The paper "Robustness of conditional GANs to noisy labels"[1] studies the proble
 ## 3. Experiments
 ### 3.1 Data
 The dataset used here is the MNIST handwritten digits recognition dataset which has about 60,000 images in training and 10,000 images in test set. The handwritten digits images are grayscale having 28 x 28 dimension each. The dataset can be found at http://yann.lecun.com/exdb/mnist/. [6] The EMNIST dataset can be found at: http://www.itl.nist.gov/iaui/vip/cs_links/EMNIST/gzip.zip. [8] There are 6 classes in the EMNIST dataset out of which the 'bymerge' dataset split is used in this work. The dataset structure of the EMNIST dataset directly matches that of MNIST dataset.
-'''
-EMNIST ByMerge: 814,255 characters. 47 unbalanced classes.
-'''
 
 ### 4.2 Baseline 
-Implemented a basic GAN using Keras and Pytorch frameworksrespectively for to understand the behavior and baseline output. For both the experiments, the GAN was trained for about 400 Epochs and the Generated images on each Epoch were plotted for visual analysis.
+Implemented a basic GAN using Keras and Pytorch frameworks to understand the behavior of standard GANs and the baseline output. For both the experiments, the GAN was trained for about 400 Epochs and the Generated images on each Epoch were plotted for visual analysis. The keras and Pytorch codes were used for testing with Gaussian Noise and EMNIST datasets respectively in further experiments.
 
 ![GAN](GAN_working.png)
 ![Loss](gan_baseline_loss.jpg "Model Loss for Training baseline GAN")
 
 ### 4.3 Gaussian Noise
-Trained the GAN and observed the outputs obtained using different percentages of Gaussian Noise in the training data. Took varying percentages of the dataset as noisy data without changing the labels. For example, First took 5% of the dataset, convolved original images of the dataset with a Gaussian kernel and added independent Gaussian noise to each pixel of the images. This thus changes the distribution of the original images. The GAN is then trained on this entire dataset and outpts are studied to observe any artifacts introduced.
+Trained the keras implementation of GAN and observed the outputs obtained using different percentages of Gaussian Noise in the training data. Took varying percentages of the dataset as noisy data without changing the labels. For example, First took 5% of the dataset, convolved original images of the dataset with a Gaussian kernel and added independent Gaussian noise to each pixel of the images. This thus changes the distribution of the original images used for training. The GAN is then trained on this entire dataset and outputs are studied to observe any artifacts introduced.
 
 ![Gaussian_Loss](gan_loss.jpg "Model Loss for Training GAN with MNIST Data with Added Gaussian Noise")
 
 ### 4.4 EMNIST Data
-Trained the GAN and observed the outputs obtained using different percentages of Combination of MNIST and EMNIST dataset using the defined function create_dataset. For example one combination would be 60000:10000::MNIST:EMNIST images combination for training.
+Trained the pytorch implementation of GAN and observed the outputs obtained using different percentages of Combination of MNIST and EMNIST datasets using the defined function create_dataset. For example one combination would be 60000:10000 MNIST:EMNIST images combination for training i.e. total 70000 images as training data.
 
 ![Emnist_Loss](gan_emnist_loss.jpg "Model Loss for Training GAN with MNIST and EMNIST Data")
 
 ## 5. Results and Discussion
-Standard Generative adversarial networks are somewhat sensitive to noise in the training data. The effect of noise is more prounounced in the early stages of training than in the later stages.
+Standard Generative adversarial networks are somewhat sensitive to noise in the training data. The effect of noise is more prounounced in the early stages of training than in the later stages of training. 
 ### 5.1 Gaussian Noise
 In this work, on training the GAN with added Gaussian noise, rather than distinguishing a real image from a generated image as in a traditional GAN, the discriminator here distinguishes between a real image from a simulated noisy image. This introduces artifacts in the output generated images of the GAN. But the inherent robustness of the GAN to small amount of distorted data doesn't show detectable artifacts in the results as compared to the original GAN results.
-Summarizing: 
-#### No Effects Seen for 5%, 10% and 20% added Noisy Data
-Minute errors are seen on training the GAN for about 400 Epochs with 30% data as Noisy Data.
+**Summarizing:** 
+#### No Substantial Effects Seen for 5%, 10% and 20% added Noisy Data
+Minute errors are seen on training the GAN for about 300 Epochs with 30% images as Noisy images.
+
+![Gaussian_Result](gan_generated_image_300.png "Output of GAN on 300 Epoch without Addition of Noise")*Without Noisy Data*
+![Gaussian_Result2](gan_generated_image_noisy_300.png "Output of GAN on 300 Epoch on Addition of Noise")*With Noisy Data*
+
 
 ### 5.2 EMNIST Dataset
 In this work, the GAN is trained on a combination of MNIST and EMNIST Images. Starting with a combination of 68000:2000::MNIST:EMNIST images, artifacts like distorted images, extra dots in the image etc. are observed in the Images. The effects are more visible during the early epochs of training and gradually seem to diminish comparatively. The studies show that the addition of EMNIST data while training does affect the performance of the GAN substantially.
-Epoch 17
+**Epoch 17**
 ![MNIST_Epoch17](epoch17_batch5.jpg)
-Epoch 60
+**Epoch 60**
 ![MNIST_Epoch60](epoch60_batch2.jpg)
-Epoch 362
+**Epoch 362**
 ![MNIST_Epoch362](epoch362_error.png)
 
 Future work on developing new architectures to make the GANs robust to noise have been done in [1] and [4].
