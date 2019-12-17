@@ -37,15 +37,18 @@ The dataset structure of the EMNIST dataset directly matches that of MNIST datas
 ## 4.3. Experiement
 ### 4.3.1 Baseline 
 Implemented a basic GAN using Keras and Pytorch frameworks to understand the behavior and baseline output. For both the experiments, the GAN was trained for about 400 Epochs and the Generated images on each Epoch were plotted for visual analysis.
+
 ![GAN](GAN_working.png)
 ![Loss](gan_baseline_loss.jpg "Model Loss for Training baseline GAN")
 
 ### 4.3.2 Gaussian Noise
 Trained the GAN and observed the outputs obtained using different percentages of Gaussian Noise in the training data. Took varying percentages of the dataset as noisy data without changing the labels. For example, First took 5% of the dataset, convolved original images of the dataset with a Gaussian kernel and added independent Gaussian noise to each pixel of the images. This thus changes the distribution of the original images. The GAN is then trained on this entire dataset and outpts are studied to observe any artifacts introduced.
+
 ![Gaussian_Loss](gan_loss.jpg "Model Loss for Training GAN with MNIST Data with Added Gaussian Noise")
 
 ### 4.3.3 EMNIST Data
 Trained the GAN and observed the outputs obtained using different percentages of Combination of MNIST and EMNIST dataset using the defined function create_dataset. For example one combination would be 60000:10000::MNIST:EMNIST images combination for training.
+
 ![Emnist_Loss](gan_emnist_loss.jpg "Model Loss for Training GAN with MNIST and EMNIST Data")
 
 ## 5. Results and Discussion
